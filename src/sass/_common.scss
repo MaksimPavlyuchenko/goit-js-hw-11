@@ -1,1 +1,57 @@
 @import '~node_modules/modern-normalize/modern-normalize.css';
+
+.search-form{
+    position: fixed;
+
+    display: flex;
+    justify-content: center;
+
+    padding: 10px;
+
+    width: 100%;
+    background-color:#215AE5;
+}
+.form-btn{
+    padding: 10;
+    border: none;
+    border-top-right-radius: 6px;
+    border-bottom-right-radius: 6px;
+    outline: none;
+  
+}
+.form-btn:hover{
+    background-color:black;
+}
+.form-input{
+  border-top-left-radius: 6px;
+   border-bottom-left-radius: 6px;
+    width: 600px;
+    padding: 10;
+    border: none;
+    outline: none;
+}
+.info{
+    display: flex;
+    gap: 25px;
+}
+.load-more{
+    display: none;
+
+    margin-left: 620px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    padding: 10px;
+
+    color:white;
+    background-color:#215AE5;
+    
+    border-color: transparent;
+    border-radius: 4px;
+   
+}
+.load-more.active{
+   display: block;
+}
+.photo-card{
+    padding-top: 60px;
+}
