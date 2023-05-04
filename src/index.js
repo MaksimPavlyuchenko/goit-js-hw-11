@@ -1,23 +1,25 @@
 import { Notify } from 'notiflix/build/notiflix-notify-aio';
-import { createMarkup } from './js/markup';
+import { createMarkup, gallery } from './js/markup';
 import { fetchGallery } from './js/fetch';
 
 const form = document.querySelector('#search-form');
-const gallery = document.querySelector('.gallery');
 const buttonLoadMore = document.querySelector('.load-more');
 
 let inputValue = '';
 let numberPage = 1;
 let allPages = 0;
+
 form.addEventListener('input', onInput);
 form.addEventListener('submit', onSubmit);
 buttonLoadMore.addEventListener('click', onClick);
+
 function onInput(event) {
   numberPage = 1;
   buttonLoadMore.classList.remove('active');
   gallery.innerHTML = '';
   inputValue = event.target.value.trim();
 }
+
 async function onSubmit(event) {
   event.preventDefault();
   const response = await fetchGallery(numberPage, inputValue);
@@ -33,6 +35,7 @@ async function onSubmit(event) {
     buttonLoadMore.classList.add('active');
   }
 }
+
 async function onClick() {
   numberPage += 1;
   const response = await fetchGallery(numberPage, inputValue);
@@ -43,4 +46,5 @@ async function onClick() {
     const responseArray = response.data.hits;
     createMarkup(responseArray);
   }
+  lightbox.refresh();
 }
