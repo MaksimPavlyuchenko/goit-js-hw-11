@@ -16,6 +16,7 @@ a {
 
   width: 100%;
   background-color: #215ae5;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 .form-btn {
   padding: 10;
@@ -36,7 +37,8 @@ a {
   outline: none;
 }
 .gallery {
-  padding-top: 60px;
+  padding-top: 75px;
+  margin-bottom: 30px;
   padding-left: 15px;
   padding-right: 15px;
   display: flex;
@@ -44,6 +46,7 @@ a {
   gap: 20px;
 }
 .photo-card{
+  
     box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 }
 .info {

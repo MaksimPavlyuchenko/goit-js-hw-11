@@ -13,7 +13,8 @@ async function fetchGallery(numberPage, inputValue) {
     page: numberPage,
     per_page: 40,
   });
-  const responseArray = await axios.get(`${BASE_URL}?${parameters}`);
-  return responseArray;
+  const response = await axios.get(`${BASE_URL}?${parameters}`);
+
+  return response;
 }
 export { fetchGallery };

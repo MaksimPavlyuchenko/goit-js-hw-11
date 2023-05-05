@@ -1,7 +1,4 @@
-const gallery = document.querySelector('.gallery');
-import SimpleLightbox from 'simplelightbox';
-import 'simplelightbox/dist/simple-lightbox.min.css';
-
+import { gallery } from '../index';
 function createMarkup(responseArray) {
   const markup = responseArray
     .map(
@@ -15,7 +12,7 @@ function createMarkup(responseArray) {
         downloads,
       }) => {
         return `
-        <a href=${largeImageURL}>
+        <a href=${largeImageURL} target="_self">
         <div class="photo-card">
     <img src="${webformatURL}" alt="${tags}" loading="lazy" width=340 height=250/>
        
@@ -45,6 +42,5 @@ function createMarkup(responseArray) {
     )
     .join('');
   gallery.insertAdjacentHTML('beforeend', markup);
-  let lightbox = new SimpleLightbox('.gallery a');
 }
-export { createMarkup, gallery };
+export { createMarkup };
